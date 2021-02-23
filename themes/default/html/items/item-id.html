@@ -1,0 +1,36 @@
+<div class="modal form-inline fade item-id" id="item_m_<?php echo $data['ID']; ?>" tabindex="-1" role="dialog" aria-labelledby="label-m-<?php echo $data['ID']; ?>" aria-hidden="true">
+	<div class="modal-dialog">
+		<form class="modal-content" action="https://unitpay.ru/pay/<?php echo $this->cfg['up_id']; ?>">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="label-m-<?php echo $data['ID']; ?>"><?php echo $data['TITLE']; ?></h4>
+			</div>
+
+			<div class="modal-body">
+				<input type="hidden" name="sum" value="">
+				<input type="hidden" name="account" value="">
+				<input type="hidden" name="desc" value="Покупка привилегий '<?php echo $data['TITLE']; ?>' на сайте <?php echo $this->cfg['s_title']; ?> для игрока [LOGIN]">
+
+				<div class="text"><?php echo $data['TEXT']; ?></div>
+
+				<div class="inputs">
+					<input type="text" name="login" class="form-control buy-login" placeholder="Ник-нейм" required="true">
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-success col-md-4 buy-item">Купить за <?php echo $data['PRICE']; ?> руб.</button>
+				<button type="button" class="btn" data-dismiss="modal">Отмена</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div class="col-lg-3 col-md-6 text-center">
+	<div class="service-box">
+		<img src="<?php echo $data['IMG']; ?>" class="img-responsive center-block" alt="icon" />
+		<br><br>
+		<!--<h3><?php echo $data['TITLE']; ?></h3>-->
+		<div><button type="button" data-toggle="modal" data-target="#item_m_<?php echo $data['ID']; ?>" href="#item_m_<?php echo $data['ID']; ?>" class="btn btn-green btn-xl btn-block buy-btn">Купить за <?php echo $data['PRICE']; ?> руб.</button></div>
+	</div>
+</div>

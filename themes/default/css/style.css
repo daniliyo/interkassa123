@@ -1,0 +1,158 @@
+@font-face{
+	font-family: KelsonSans-LightRU;
+	src: url("../fonts/KelsonSans-LightRU.otf");
+}
+
+body {
+	background-image: url('../img/1.jpg');
+	background-position: center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+	background-attachment: fixed;
+}
+
+section {
+	/*background-image: url('../img/2.jpg');*/
+	position: relative;
+	width: 100%;
+	min-height: auto;
+	text-align: center;
+	color: #fff;
+	display: table;
+	background-position: center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+
+section > .container {
+	display		: table-cell;
+	vertical-align	: middle;
+}
+
+section > .container > .row {
+	width: 80%;
+	margin: auto;
+}
+
+section.s-line-3 {
+	/*background-image: url('../img/3.jpg');*/
+	min-height: 100%;
+}
+
+section.s-line-4 {
+	/*background-image: url('../img/4.jpg');*/
+	min-height: 100%;
+}
+
+section.s-line-5 {
+	background: #fff;
+	color: #000;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+#server-ip {
+	display: block;
+	word-wrap: break-word;
+	white-space: normal;
+	font-weight: normal;
+}
+
+.btn-green {
+	color: #fff;
+	background-color: #489334;
+	border-color: #62aa4f;
+}
+
+.btn-green:hover,
+.btn-green:focus {
+	background-color: #468e33;
+	color: #eee;
+}
+
+body { font-family: Geometric706-Medium; }
+
+.uper {
+	text-transform: uppercase;
+}
+
+.btn {
+	font-family: KelsonSans-LightRU;
+	outline: none !important;
+}
+
+.modal {
+	color: #555;
+}
+
+.modal .text {
+	font-size: 12px;
+	margin-bottom: 20px;
+}
+
+.qexy-icon {
+	display: inline-block;
+	width: 37px;
+	height: 34px;
+	background: url('../img/qexy.png') no-repeat;
+	background-size: 100% 100%;
+}
+
+.static-page {
+	margin-top: 60px;
+	text-align: center;
+	color: #333;
+	background: transparent;
+	padding: 20px;
+}
+
+.static-page .container {
+	background: #fff;
+	border-radius: 10px;
+	padding: 20px;
+}
+
+.static-page.cp-containter .container {
+	border-radius: 4px;
+}
+
+.static-page.cp-auth {
+	width: 60%;
+	margin: auto;
+	margin-top: 60px;
+}
+
+.static-page .static-content .text {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	word-wrap: break-word;
+}
+
+.cp-container .content{
+	color: #333;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 4px;
+}
+
+.cp-container .content .list-group {
+	margin-bottom: 0px;
+}
+
+.notify {
+	position: fixed;
+	top: 60px;
+	width: 90%;
+	text-align: center;
+	left: 50%;
+	margin-left: -45%;
+}
+
+.modal-open {
+	overflow: auto;
+	padding-right: 0px !important;
+}
