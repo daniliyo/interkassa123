@@ -41,6 +41,8 @@ switch($do){
 		$content = $core->load_mod($do);
 	break;
 
+	case 'up_status_interkassa': $content = $core->load_mod('status_payment_interkassa'); break;
+	
 	case 'up_status': $content = $core->load_mod('status'); break;
 
 	default: $content = $core->sp(DIR_THEMES.'html/statics/404.html'); break;

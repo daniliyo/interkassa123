@@ -7,6 +7,13 @@
 			</div>
 
 			<div class="modal-body">
+				
+				<input type="hidden" name="ik_co_id" value="<?=$this->cfg['id_interkassa'];?>">
+				<input type="hidden" name="ik_pm_no" value="">
+				<input type="hidden" name="ik_am" value="">
+				<input type="hidden" name="ik_cur" value="rub">
+				<input type="hidden" name="ik_desc" value="Покупка привилегий '<?php echo $data['TITLE']; ?>' на сайте <?php echo $this->cfg['s_title']; ?> для игрока [LOGIN]">
+				
 				<input type="hidden" name="sum" value="">
 				<input type="hidden" name="account" value="">
 				<input type="hidden" name="desc" value="Покупка привилегий '<?php echo $data['TITLE']; ?>' на сайте <?php echo $this->cfg['s_title']; ?> для игрока [LOGIN]">
@@ -16,10 +23,49 @@
 				<div class="inputs">
 					<input type="text" name="login" class="form-control buy-login" placeholder="Ник-нейм" required="true">
 				</div>
+				<br>
+				
+				<!--
+				<div class="row r3">
+                    <h3 class="payment">PAYMENT DETAILS</h3>
+                </div>
+                <div class="row r4">
+                    <h6 class="payment-method">Select Payment method:</h6>
+                </div>
+                <div class="row r5">
+                    <div class="col-2"><img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" /></div>
+                    <div class="col-2"><img src="https://img.icons8.com/color/48/000000/visa.png" /></div>
+                    <div class="col-2"><img src="https://img.icons8.com/color/48/000000/amex.png" /></div>
+                    <div class="col-2"><img src="https://img.icons8.com/color/48/000000/paypal.png" /></div>
+                </div>
+				-->
+				
+				<div class="row r3">
+                    <h3 class="payment">Оплатить с помощью</h3>
+                </div>
+                <div class="row">
+				     <ul style="list-style: none;" class="payment field-payment-payment_method required has-success">
+                        
+                        <div id="payment-payment_method" class="choose-pay flex flex--wrap" role="radiogroup" aria-required="true" aria-invalid="false">
+                        <li style="list-style: none;"><div class="choose-pay__item">
+                            <label for="2">
+                                <input type="radio" name="syspay" value="unitpay" url="https://unitpay.ru/pay/<?php echo $this->cfg['up_id']; ?>" />
+                                <img src="/themes/default/img/unitpay.png">
+                            </label></div></li>
+                        <li style="list-style: none;"><div class="choose-pay__item">
+                            <label for="3">
+                                <input type="radio" name="syspay" value="interkassa" />
+                                <img src="/themes/default/img/b-logo-min-1.png" style="max-width:124px; width:auto;">
+                            </label></div></li>
+                        </div>
+                        
+                        <p class="help-block help-block-error"></p>
+                     </ul>   
+				</div>
 			</div>
 
 			<div class="modal-footer">
-				<button type="submit" class="btn btn-success col-md-4 buy-item">Купить за <?php echo $data['PRICE']; ?> руб.</button>
+				<button type="submit" class="btn btn-success col-md-4 buy-item" disabled>Купить за <?php echo $data['PRICE']; ?> руб.</button>
 				<button type="button" class="btn" data-dismiss="modal">Отмена</button>
 			</div>
 		</form>

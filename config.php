@@ -17,5 +17,8 @@ $cfg = array (
   'up_secret' => '<Secret_key>',
   'srv_ip' => '',
   'srv_port' => 0,
+  
+  'up_secret_interkassa' => 'TVTzmHDaWx9pI0rz', // секретный ключ интеркассы
+  'id_interkassa' => '602fb8a6b928a255e03a32b4', // ид интеркассы
 );
 ?>
