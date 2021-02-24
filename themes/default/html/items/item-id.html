@@ -1,5 +1,13 @@
 <div class="modal form-inline fade item-id" id="item_m_<?php echo $data['ID']; ?>" tabindex="-1" role="dialog" aria-labelledby="label-m-<?php echo $data['ID']; ?>" aria-hidden="true">
 	<div class="modal-dialog">
+	    <form class="modal-content-interkassa" action="https://sci.interkassa.com" style="display:none;">
+            <input type="hidden" name="ik_co_id" value="<?=$this->cfg['id_interkassa'];?>">
+			<input type="hidden" name="ik_pm_no" value="">
+			<input type="hidden" name="ik_am" value="">
+			<input type="hidden" name="ik_cur" value="rub">
+			<input type="hidden" name="ik_desc" value="Покупка привилегий '<?php echo $data['TITLE']; ?>' на сайте <?php echo $this->cfg['s_title']; ?> для игрока [LOGIN]">
+			
+        </form>
 		<form class="modal-content" action="https://unitpay.ru/pay/<?php echo $this->cfg['up_id']; ?>">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -7,12 +15,6 @@
 			</div>
 
 			<div class="modal-body">
-				
-				<input type="hidden" name="ik_co_id" value="<?=$this->cfg['id_interkassa'];?>">
-				<input type="hidden" name="ik_pm_no" value="">
-				<input type="hidden" name="ik_am" value="">
-				<input type="hidden" name="ik_cur" value="rub">
-				<input type="hidden" name="ik_desc" value="Покупка привилегий '<?php echo $data['TITLE']; ?>' на сайте <?php echo $this->cfg['s_title']; ?> для игрока [LOGIN]">
 				
 				<input type="hidden" name="sum" value="">
 				<input type="hidden" name="account" value="">

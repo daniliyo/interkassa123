@@ -66,9 +66,9 @@ $(function(){
 				$('#'+formid+' input[name="ik_pm_no"]').val(data._data.i_id);
 				$('#'+formid+' input[name="ik_desc"]').val(newinvdesc);
 				
-				
-
-				$("#"+formid+" .modal-content")[0].submit();
+				var syspay = $('#'+formid).find('input[name="syspay"]:checked').val();
+                if(syspay == 'unitpay') $("#"+formid+" .modal-content")[0].submit();
+                else if(syspay == 'interkassa') $("#"+formid+" .modal-content-interkassa")[0].submit();
 
 			},
 			complete: function (response) {
