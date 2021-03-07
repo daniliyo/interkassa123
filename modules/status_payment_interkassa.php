@@ -51,6 +51,7 @@ class module{
 		if(!isset($_GET['ik_sign'])){ return $this->notify("Hacking Attempt!"); }
         
 		if($_GET['ik_inv_st'] == 'canceled'){ return $this->notify("Платеж отменен"); }
+		if($_GET['ik_inv_st'] == 'fail'){ return $this->notify("Платеж не проведен"); }
 		
 		$params = @$_GET;
         unset($params['do']);
