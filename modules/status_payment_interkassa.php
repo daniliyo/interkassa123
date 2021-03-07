@@ -47,9 +47,12 @@ class module{
 
 	private function up_status(){
 
+
 		if(!isset($_GET['ik_sign'])){ return $this->notify("Hacking Attempt!"); }
         
-        $params = @$_GET;
+		if($_GET['ik_inv_st'] == 'canceled'){ return $this->notify("Платеж отменен"); }
+		
+		$params = @$_GET;
         unset($params['do']);
 		$id = intval(@$params['ik_pm_no']);
 
@@ -57,6 +60,10 @@ class module{
 		$time = time();
 
 		$sign = @$params['ik_sign'];
+        $c = '';
+        foreach($params as $k=>$v){
+            $c .= $k.':'.$v.';';
+        }
         
 		$query	= $this->db->query("SELECT `t`.iid, `t`.login, `i`.`type`, `i`.`value`, `i`.`amount`
 									FROM `qx_trans` AS `t`
@@ -77,8 +84,8 @@ class module{
 		$createsign = $this->getMd5Sign($params, $this->cfg['up_secret_interkassa']);
 
 		if($sign!==$createsign){ return $this->notify("Ошибка хэш-суммы платежа"); }
-
-		$update_trans = $this->db->query("UPDATE `qx_trans`
+        
+        $update_trans = $this->db->query("UPDATE `qx_trans`
 										SET `time`='$time', `status`='1'
 										WHERE id='$id' AND `status`='0'");
 
